@@ -6,6 +6,7 @@
 | [Updating Committer Name and Email in Git Repository](#updating-committer-name-and-email-in-git-repository) | Guide to updating the committer name and email using `git filter-branch`.     |
 | [Updating Specific Commit Author and Committer Information in Git Repository](#updating-specific-commit-author-and-committer-information-in-git-repository) | Guide to updating author and committer for a specific commit.                 |
 
+---
 
 # Updating Committer Name and Email in Git Repository
 
@@ -73,6 +74,8 @@ This guide explains how to update the committer name and email address in a Git 
 - [GitHub Help: Changing author info](https://help.github.com/en/github/using-git/changing-author-info)
 
 By following these steps, you can ensure that your commits reflect the correct committer name and email address.
+
+---
 
 # Updating Specific Commit Author and Committer Information in Git Repository
 
