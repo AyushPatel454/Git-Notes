@@ -3,9 +3,39 @@
 
 | Section                                                                                             | Description                                                                   |
 |-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| [Using `git pull --rebase` Instead of `git pull`](#using-git-pull---rebase-instead-of-git-pull)     | Explanation of why to use `git pull --rebase` over `git pull`.                |
 | [Updating Committer Name and Email in Git Repository](#updating-committer-name-and-email-in-git-repository) | Guide to updating the committer name and email using `git filter-branch`.     |
 | [Updating Specific Commit Author and Committer Information in Git Repository](#updating-specific-commit-author-and-committer-information-in-git-repository) | Guide to updating author and committer for a specific commit.                 |
 
+---
+
+# Using `git pull --rebase` Instead of `git pull`
+
+This section explains why you should use `git pull --rebase` instead of the regular `git pull` command and how it helps maintain a cleaner project history.
+
+## Why Use `git pull --rebase`?
+
+Assume John and Roney are working on the same project. John makes changes (b) on his local machine, and Roney makes changes (c) on his local machine. Roney pushes his changes to the remote branch. When John tries to push his changes, he cannot because John and Roney have the same ancestor commit (a). John uses the `git pull` command to fetch Roney's changes to his local machine. However, this results in a merge commit (d) because both John's and Roney's changes have the same ancestor commit (a). 
+
+Over time, this can clutter the repository history with many unnecessary merge commits, making it difficult to read.
+
+## Using `git pull --rebase`
+
+When John hasn't pushed his changes yet and uses the `git pull --rebase` command, the remote changes are applied first, and then John's changes are added on top. This results in a cleaner history:
+(a) -> (b) Remote -> (c) John's changes
+
+### Command to Use
+
+```sh
+git pull --rebase
+```
+## Handling Conflicts
+If conflicts occur while using git pull --rebase, you can abort the rebase process using:
+```sh
+git rebase --abort
+```
+Alternatively, you can use advanced rebase commands to resolve conflicts.
+Or: For this situtation use `git pull`
 ---
 
 # Updating Committer Name and Email in Git Repository
