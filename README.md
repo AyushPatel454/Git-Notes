@@ -34,8 +34,10 @@ If conflicts occur while using git pull --rebase, you can abort the rebase proce
 ```sh
 git rebase --abort
 ```
+
 Alternatively, you can use advanced rebase commands to resolve conflicts.
 Or: For this situtation use `git pull`
+
 ---
 
 # Updating Committer Name and Email in Git Repository
